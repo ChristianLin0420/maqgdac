@@ -116,7 +116,7 @@ def init_dir(env, env_args, algo, entity_name, exp_name, seed, logger_path):
     # Initialize wandb
     wandb_run = wandb.init(
         entity=entity_name,
-        project=f"maqwdac-{env}-{task}",
+        project=f"maqgdac-{env}-{task}",
         name=f"{algo}-{exp_name}-seed{seed}-{hms_time}",
         config=wandb_config,
         dir=log_path,
