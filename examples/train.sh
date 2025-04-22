@@ -1,1 +1,1 @@
-python train.py --algo happo --env pettingzoo_mpe --entity_name test --exp_name test
+python train.py --algo haddpg --env pettingzoo_mpe --entity_name test --exp_name test

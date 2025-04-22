@@ -55,8 +55,8 @@ class OffPolicyBaseRunner:
             args["algo"],
             args["entity_name"],
             args["exp_name"],
-            algo_args["seed"],
-            algo_args["train"]["logger_path"],
+            algo_args["seed"]["seed"],
+            algo_args["logger"]["log_dir"],
         )
         save_config(args, algo_args, env_args, self.run_dir, self.wandb_run)
         self.log_file = open(
@@ -533,7 +533,7 @@ class OffPolicyBaseRunner:
             eval_score_cnt = 0
         episode_lens = []
         one_episode_len = np.zeros(
-            self.algo_args["eval"]["n_eval_rollout_threads"], dtype=np.int
+            self.algo_args["eval"]["n_eval_rollout_threads"], dtype=np.int32
         )
 
         eval_obs, eval_share_obs, eval_available_actions = self.eval_envs.reset()
